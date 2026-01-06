@@ -3,21 +3,20 @@ import java.util.Map;
 
 class Solution {
     public int solution(int[] array) {
-        Map<Integer, Integer> countMap = new HashMap<>();
-        int maxCount = 0;
+        Map<Integer, Integer> map = new HashMap<>();
         int answer = 0;
+        int maxCount = 0;
         
-        for(int number : array) {
-            int count = countMap.getOrDefault(number, 0) + 1;
+        for(int num : array) {
+            int count = map.getOrDefault(num, 0) + 1;
             if(count > maxCount) {
                 maxCount = count;
-                answer = number;
+                answer = num;
             } else if(count == maxCount) {
                 answer = -1;
             }
-            countMap.put(number, count);
+            map.put(num, count);
         }
         return answer;
-        
     }
 }
