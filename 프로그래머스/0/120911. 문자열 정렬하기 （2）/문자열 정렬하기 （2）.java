@@ -1,0 +1,13 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String my_string) {
+        char[] chars = my_string.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] = Character.toLowerCase(chars[i]);
+        }
+        
+        Arrays.sort(chars);
+        return new String(chars);
+    }
+}
